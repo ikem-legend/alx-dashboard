@@ -51,7 +51,7 @@
           </template>
 
           <q-list>
-            <q-item clickable v-close-popup v-for="menu in userMenu" :key="menu">
+            <q-item clickable v-close-popup v-for="menu in userMenu" :key="menu.name">
               <q-item-section avatar>
                 <q-avatar :icon="menu.icon" color="grey-dark" text-color="white" />
               </q-item-section>
