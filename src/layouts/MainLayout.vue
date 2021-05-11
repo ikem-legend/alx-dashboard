@@ -118,11 +118,9 @@
       }
     },
     computed: {
+      // This method is used to restrict the number of times the menu separator appears
       menuSeparators() {
         return this.menuItems.slice(1)
-      },
-      bottomMenuSeparators() {
-        return this.menuItems[0]
       }
     }
   }
