@@ -1,7 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf" class="bg-white">
-    <q-header elevated>
+    <q-header elevated class="bg-white">
       <q-toolbar>
+        <div class="col-sm-1 col-md-0">
         <q-btn
           flat
           dense
@@ -9,11 +10,14 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
           aria-label="Menu"
           icon="menu"
+          color="grey-dark"
+          class="mobile-only"
         />
+        </div>
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <div class="col-md-12">
+          <app-navbar></app-navbar>
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -51,8 +55,13 @@
 </template>
 
 <script>
+  import Navbar from '../components/Navbar'
+
   export default {
     name: 'MyLayout',
+    components: {
+      appNavbar: Navbar
+    },
     data () {
       return {
         leftDrawerOpen: false,
