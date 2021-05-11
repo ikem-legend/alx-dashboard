@@ -1,6 +1,6 @@
 <template>
-  <div class="q-pa-lg">
-<!--    <div class="row">-->
+  <div class="q-pa-lg full-width">
+    <div class="row">
       <div class="col-8">
         <div class="row">
           <q-icon name="waving_hand" class="deep-orange q-mr-sm self-center"></q-icon>
@@ -23,18 +23,22 @@
           </div>
         </div>
       </div>
-      <div class="col-4"></div>
-<!--    </div>-->
+      <div class="col-4">
+        <stats-messages></stats-messages>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import PaymentHistoryChart from "./charts/PaymentHistory";
+  import StatsMessages from "./StatsMessages";
 
   export default {
     name: "Dashboard",
     components: {
-      chartPayments: PaymentHistoryChart
+      chartPayments: PaymentHistoryChart,
+      statsMessages: StatsMessages
     }
   }
 </script>
