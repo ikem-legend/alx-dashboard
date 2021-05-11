@@ -1,14 +1,16 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-full.svg"
-    >
+  <q-page class="flex row">
+    <app-dashboard></app-dashboard>
   </q-page>
 </template>
 
 <script>
+import Dashboard from "../components/Dashboard";
+
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {
+    appDashboard: Dashboard
+  }
 }
 </script>

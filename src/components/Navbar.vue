@@ -51,21 +51,12 @@
           </template>
 
           <q-list>
-            <q-item clickable v-close-popup>
+            <q-item clickable v-close-popup v-for="menu in userMenu" :key="menu.name">
               <q-item-section avatar>
-                <q-avatar icon="person" color="grey-dark" text-color="white" />
+                <q-avatar :icon="menu.icon" color="grey-dark" text-color="white" />
               </q-item-section>
               <q-item-section>
-                Profile
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-close-popup>
-              <q-item-section avatar>
-                <q-avatar icon="settings" color="grey-dark" text-color="white" />
-              </q-item-section>
-              <q-item-section>
-                Settings
+                {{ menu.name }}
               </q-item-section>
             </q-item>
           </q-list>
@@ -83,7 +74,17 @@
       return {
         searchText: '',
         live: true,
-        languages: ['English', 'French', 'Swahili', 'Xhosa']
+        languages: ['English', 'French', 'Swahili', 'Xhosa'],
+        userMenu: [
+          {
+            name: 'Profile',
+            icon: 'person'
+          },
+          {
+            name: 'Settings',
+            icon: 'settings'
+          }
+        ]
       }
     }
   }
